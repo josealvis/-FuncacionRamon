@@ -14,6 +14,7 @@ routers.get('/participante/:id', function(req, res){
                else res.send("No se econtraro registros.");
             })
            .catch(err => res.status(500).send(err));
+           
     
  
  })
