@@ -9,7 +9,8 @@
             "request": "launch",
             "name": "Launch Program",
             //"program": "${workspaceRoot}/server.js"
-            "program": "${workspaceRoot}/fireBaseRepo/core/FireBaseCore.js"
+            //"program": "${workspaceRoot}/fireBaseRepo/core/FireBaseCore.js"
+            "program": "${workspaceRoot}/Mongoose/core/mongooseCore.js"
         }
     ]
 }

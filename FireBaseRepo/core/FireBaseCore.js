@@ -39,7 +39,7 @@ else console.log('Success update')
 // tomar en cuenta que se sobreescribe donde especificas cuando haces update 
 
 
-comentReference.push().set({autor: "Juanca", message:"this could have no sense."});
+comentReference.push().set({autor: "Algodon", message:"Wuba duba dup dup!"});
 //shorthand refrence.push(object);
 
 
