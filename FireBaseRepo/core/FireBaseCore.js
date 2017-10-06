@@ -39,13 +39,40 @@ else console.log('Success update')
 // tomar en cuenta que se sobreescribe donde especificas cuando haces update 
 
 
-comentReference.push().set({autor: "Algodon", message:"Wuba duba dup dup!"});
+//comentReference.push().set({autor: "Algodon", message:"Wuba duba dup dup!"});
 //shorthand refrence.push(object);
 
+//var newComentRef = comentReference.push(); 
+ //console.log(newComentRef.key/*devuelve el hash*/); 
 
+
+ comentReference.update({'-Ksoj99BI-KVWPfnNChc/upVote' : 0});
+
+ var upVoteRef = comentReference.child('-Ksoj99BI-KVWPfnNChc/upVote');
+ upVoteRef.transaction(old_val => (old_val || 0 ) +1);//usar transaction para hacer incrementos.
+
+
+/*
+// to retrive data
 // Attach an asynchronous callback to read the data at our posts reference
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
+
+
+comentReference.on("value", 
+                    snapshot => console.log(snapshot.val()),
+                  errorObject => console.log(errorObject));*/
+
+
+// Retrieve new posts as they are added to our database
+comentReference.on("child_added", (snapshot, prevChildKey)=>{
+  var newPost = snapshot.val();
+  console.log(newPost);
+  console.log("Previous Post ID: " + prevChildKey);
+
+})
+
+
