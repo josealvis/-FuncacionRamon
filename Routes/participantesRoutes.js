@@ -2,7 +2,6 @@ var express = require('express');
 var presonasRepo =  require('../DataBase/repo/presonasRepo');
 var __repo = new presonasRepo(); 
 
-
 var routers = express.Router();
 
 routers.get('/participante/:id', function(req, res){
@@ -11,11 +10,9 @@ routers.get('/participante/:id', function(req, res){
      __repo.getPersonaPorId(id)
            .then(data =>{
                if(data) res.send(data);
-               else res.send("No se econtraro registros.");
+               else res.send("No se econtraron registros.");
             })
            .catch(err => res.status(500).send(err));
-           
-    
  
  })
 

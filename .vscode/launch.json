@@ -9,8 +9,19 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceRoot}/server.js"
-           // "program": "${workspaceRoot}/fireBaseRepo/core/FireBaseCore.js"
-            //"program": "${workspaceRoot}/Mongoose/core/mongooseCore.js"
+         
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Firebase",
+           "program": "${workspaceRoot}/fireBaseRepo/core/FireBaseCore.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Mongoose",
+           "program": "${workspaceRoot}/Mongoose/core/mongooseCore.js"
         }
     ]
 }
