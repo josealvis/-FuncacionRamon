@@ -23,13 +23,17 @@
                 var x;
 
                 if(parameters.length > 0){
-                    for(x=0;x<parameters.lenght;x++)
+                    for(x=0;x<parameters.length;x++){
                     request.input(parameters[x].name, parameters[x].type, parameters[x].value);
+                    }
                 }
 
                 request.query(query, function (err, recordset) {
                        
-                    if (err) console.log(err)
+                    if (err) {
+                        console.log(err);
+                        reject(err);
+                    }
                     // send records as a response
                     sql.close();
                         resolve(recordset);
